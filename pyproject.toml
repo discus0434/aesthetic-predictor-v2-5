@@ -1,0 +1,118 @@
+[project]
+name = "aesthetic-predictor-v2-5"
+version = "2024.5.27"
+description = "Aesthetic predictor v2.5"
+authors = [
+    { name = "Verb", email = "discus0434@gmail.com"},
+]
+license = {file = "LICENSE"}
+readme = {file = "README.md", content-type = "text/markdown"}
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy==1.26.3",
+    "accelerate~=0.30",
+    "torch==2.2.1+cu118",
+    "torchvision==0.17.1+cu118",
+    "xformers==0.0.25+cu118",
+    "triton==2.2.0",
+    "transformers~=4.40",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "mypy",
+    "pytest",
+    "pandas==2.2.1",
+    "datasets==2.19.0",
+    "sqlalchemy==2.0.29",
+    "joblib==1.4.0",
+    "simple-aesthetics-predictor==0.1.2",
+    "sentencepiece",
+    "datasets",
+    "timm==0.9.16",
+    "flash_attn==2.5.7",
+    "deepspeed==0.14.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aesthetic_predictor_v2_5"]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py310"
+
+[tool.ruff.lint]
+exclude = [".venv"]
+select = [
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "E",  # pycodestyle errors
+    "G",
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "UP",  # pyupgrade
+    "EXE",
+    "F",
+    "SIM1",
+    # Not included in flake8
+    "LOG",
+    "NPY",
+    "PERF",
+    "PGH004",
+    "PIE794",
+    "PIE800",
+    "PIE804",
+    "PIE807",
+    "PIE810",
+    "PLC0131", # type bivariance
+    "PLC0132", # type param mismatch
+    "PLC0205", # string as __slots__
+    "PLE",
+    "PLR0133", # constant comparison
+    "PLR0206", # property with params
+    "PLR1722", # use sys exit
+    "PLW0129", # assert on string literal
+    "PLW0406", # import self
+    "PLW0711", # binary op exception
+    "PLW1509", # preexec_fn not safe with threads
+    "PLW3301", # nested min max
+    "PT006", # TODO: enable more PT rules
+    "PT022",
+    "PT023",
+    "PT024",
+    "PT025",
+    "PT026",
+    "PYI",
+    "RUF008", # mutable dataclass default
+    "RUF015", # access first ele in constant time
+    "RUF016", # type error non-integer index
+    "RUF017",
+    "TRY200", # TODO: migrate from deprecated alias
+    "TRY302",
+]
+ignore = [
+    "G004",
+    "F821",
+    "C401",
+    "C408",
+    "PERF203",
+    "PERF401",
+    "B905",
+]

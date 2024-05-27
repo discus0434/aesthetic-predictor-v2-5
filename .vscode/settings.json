@@ -1,0 +1,14 @@
+{
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "ruff.lint.enable": true,
+    "ruff.lint.args": [
+        "--config=pyproject.toml"
+    ],
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "ruff.importStrategy": "fromEnvironment"
+}
