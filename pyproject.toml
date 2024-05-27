@@ -47,6 +47,7 @@ dev = [
     "timm==0.9.16",
     "flash_attn==2.5.7",
     "deepspeed==0.14.2",
+    "gradio~=4.31",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -115,4 +116,5 @@ ignore = [
     "PERF203",
     "PERF401",
     "B905",
+    "SIM117",
 ]
