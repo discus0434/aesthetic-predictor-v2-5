@@ -1,3 +1,5 @@
+import inspect
+
 import gradio as gr
 import torch
 from aesthetic_predictor_v2_5 import convert_v2_5_from_siglip
@@ -33,11 +35,29 @@ class AestheticPredictor:
 if __name__ == "__main__":
     aesthetic_predictor = AestheticPredictor()
     with gr.Blocks(theme="soft") as blocks:
-        with gr.Column():
-            image = gr.Image(label="Input Image", type="pil")
-            button = gr.Button("Predict")
-            score = gr.Textbox(label="Aesthetic Score")
+        markdown = gr.Markdown(
+            value=inspect.cleandoc(
+                """
+                # Aesthetic Predictor V2.5
 
-            button.click(aesthetic_predictor.inference, inputs=image, outputs=score)
+                This app predicts the aesthetic score of input images such as paintings,
+                photographs, and illustrations.
+
+                The aesthetic score is a floating-point number between 1 and 10.
+
+                5.5+ is considered to be a good aesthetic score.
+                """
+            )
+        )
+
+        with gr.Row():
+            with gr.Column():
+                image = gr.Image(label="Input Image", type="pil")
+                button = gr.Button("Predict")
+
+            with gr.Column():
+                score = gr.Textbox(label="Aesthetic Score")
+
+        button.click(aesthetic_predictor.inference, inputs=image, outputs=score)
 
     blocks.queue().launch()
