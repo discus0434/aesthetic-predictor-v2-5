@@ -1,6 +1,6 @@
 [project]
 name = "aesthetic-predictor-v2-5"
-version = "2024.5.27"
+version = "2024.5.28"
 description = "Aesthetic predictor v2.5"
 authors = [
     { name = "Verb", email = "discus0434@gmail.com"},
