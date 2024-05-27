@@ -4,7 +4,7 @@
   <img src="./assets/example.png" width=50%>
 </p>
 
-Aesthetic Predictor V2.5 is a SigLIP-based predictor that evaluates the aesthetics of an image on a scale from 1 to 10. Compared to Aesthetic Predictor V2, it has been improved to evaluate a wider range of image domains.
+Aesthetic Predictor V2.5 is a SigLIP-based predictor that evaluates the aesthetics of an image on a scale from 1 to 10. Compared to [Aesthetic Predictor V2](https://github.com/christophschuhmann/improved-aesthetic-predictor), it has been improved to evaluate a wider range of image domains.
 
 This repository features an interface similar to Hugging Face Transformers, inspired by [Simple Aesthetics Predictor](https://pypi.org/project/simple-aesthetics-predictor/), making it easy to use.
 
