@@ -11,15 +11,17 @@ class AestheticPredictor:
             low_cpu_mem_usage=True,
             trust_remote_code=True,
         )
-        self.model = self.model.to(torch.bfloat16).cuda()
+        if torch.cuda.is_available():
+            self.model = self.model.to(torch.bfloat16).cuda()
 
     def inference(self, image: Image.Image) -> float:
         # preprocess image
-        pixel_values = (
-            self.preprocessor(images=image.convert("RGB"), return_tensors="pt")
-            .pixel_values.to(torch.bfloat16)
-            .cuda()
-        )
+        pixel_values = self.preprocessor(
+            images=image.convert("RGB"), return_tensors="pt"
+        ).pixel_values
+
+        if torch.cuda.is_available():
+            pixel_values = pixel_values.to(torch.bfloat16).cuda()
 
         # predict aesthetic score
         with torch.inference_mode():
