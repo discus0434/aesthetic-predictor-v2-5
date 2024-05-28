@@ -57,3 +57,5 @@ with torch.inference_mode():
 # print result
 print(f"Aesthetics score: {score:.2f}")
 ```
+
+With ComfyUI, you can use [this custom node](https://github.com/discus0434/comfyui-aesthetic-predictor-v2-5).
