@@ -22,9 +22,10 @@ pip install aesthetic-predictor-v2-5
 
 ```python
 from pathlib import Path
-import torch
 
+import torch
 from aesthetic_predictor_v2_5 import convert_v2_5_from_siglip
+from PIL import Image
 
 SAMPLE_IMAGE_PATH = (
     Path(__file__).resolve().parent
