@@ -31,12 +31,7 @@ import torch
 from aesthetic_predictor_v2_5 import convert_v2_5_from_siglip
 from PIL import Image
 
-SAMPLE_IMAGE_PATH = (
-    Path(__file__).resolve().parent
-    / "assets"
-    / "samples"
-    / "sample1.jpg"
-)
+SAMPLE_IMAGE_PATH = Path("path/to/image")
 
 # load model and preprocessor
 model, preprocessor = convert_v2_5_from_siglip(
