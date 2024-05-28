@@ -4,7 +4,7 @@
   <img src="./assets/example.png" width=50%>
 </p>
 
-Aesthetic Predictor V2.5 is a SigLIP-based predictor that evaluates the aesthetics of an image on a scale from 1 to 10. Compared to [Aesthetic Predictor V2](https://github.com/christophschuhmann/improved-aesthetic-predictor), it has been improved to evaluate a wider range of image domains. Unlike V2, 5.5+ is considered to be a great aesthetic score.
+Aesthetic Predictor V2.5 is a SigLIP-based predictor that evaluates the aesthetics of an image on a scale from 1 to 10. Compared to [Aesthetic Predictor V2](https://github.com/christophschuhmann/improved-aesthetic-predictor), it has been improved to evaluate a wider range of image domains. **Unlike V2, 5.5+ is considered to be a great aesthetic score.**
 
 **You can try Aesthetic Predictor V2.5 at Hugging Face Spaces!**
 
