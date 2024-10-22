@@ -1,6 +1,6 @@
 [project]
 name = "aesthetic-predictor-v2-5"
-version = "2024.5.28.1"
+version = "2024.10.22.1"
 description = "Aesthetic predictor v2.5"
 authors = [
     { name = "Verb", email = "discus0434@gmail.com"},
@@ -19,11 +19,11 @@ classifiers = [
 ]
 
 dependencies = [
-    "numpy~=1.26",
-    "accelerate~=0.30",
-    "torch~=2.2",
-    "torchvision~=0.17",
-    "transformers~=4.40",
+    "numpy<2",
+    "accelerate>=0.30",
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "transformers>=4.40",
 ]
 
 [build-system]
@@ -35,13 +35,13 @@ dev = [
     "ruff",
     "mypy",
     "pytest",
-    "datasets==2.19.0",
-    "sqlalchemy==2.0.29",
-    "simple-aesthetics-predictor==0.1.2",
+    "datasets>=2.19.0",
+    "sqlalchemy>=2.0.29",
+    "simple-aesthetics-predictor>=0.1.2",
     "datasets",
-    "timm==0.9.16",
-    "deepspeed==0.14.2",
-    "gradio~=4.31",
+    "timm>=0.9.16",
+    "deepspeed>=0.14.2",
+    "gradio>=4.31",
 ]
 
 [tool.hatch.build.targets.wheel]
