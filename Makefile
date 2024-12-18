@@ -38,3 +38,8 @@ run:
 
 log:
 	docker container logs -f ${NAME}
+
+up-dist:
+	pip install hatch twine
+	hatch build
+	twine upload dist/*
